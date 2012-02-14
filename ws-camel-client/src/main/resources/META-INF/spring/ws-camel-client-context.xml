@@ -20,7 +20,7 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
-s
+
   <camelContext id="com.fusesource.examples.ws-camel-client" xmlns="http://camel.apache.org/schema/spring">
     
     <route id="periodicGreeter">
@@ -36,9 +36,9 @@ s
       
       <loadBalance>
         <roundRobin/>
-        <!-- logging route -->
-        <to uri="http://localhost:9090/greeter" />
-        <!-- our implementation -->
+        <!-- exposed by ws-cxf-service -->
+        <to uri="cxf:http://localhost:9090/greeter?serviceClass=com.fusesource.examples.greeter.Greeter" />
+        <!-- exposed by ws-camel-service -->
         <to uri="cxf:http://localhost:9090/greeterImpl?serviceClass=com.fusesource.examples.greeter.Greeter" />
       </loadBalance>
     </route>

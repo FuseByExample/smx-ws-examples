@@ -29,7 +29,7 @@
   <packaging>pom</packaging>
 
   <properties>
-    <osgi-import-package>META-INF.cxf,wsdl,*</osgi-import-package>
+    <osgi-import-package>META-INF.cxf,wsdl,com.fusesource.examples.greeter,com.fusesource.examples.greeter.model,*</osgi-import-package>
     <osgi-dynamicimport-package>org.apache.cxf.*,org.springframework.beans.*</osgi-dynamicimport-package>
   </properties>
 
