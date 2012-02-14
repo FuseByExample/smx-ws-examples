@@ -21,7 +21,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.fusesource.examples</groupId>
-  <artifactId>cxf-camel</artifactId>
+  <artifactId>smx-ws-examples</artifactId>
   <packaging>pom<!--bundle--></packaging>
   <version>1.0-SNAPSHOT</version>
 
@@ -33,9 +33,13 @@
     <module>ws-camel-service</module>
     <module>ws-camel-proxy</module>
     <module>ws-camel-client</module>
+    <module>ws-features</module>
   </modules>
 
   <properties>
+    <application-name>ServiceMix Web Service Examples</application-name>
+    <fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
+
     <camel-version>2.8.3</camel-version>
     <cxf-version>2.4.0</cxf-version>
     <slf4j-version>1.6.1</slf4j-version>
@@ -46,9 +50,6 @@
     <build-plugins-plugin-version>2.5</build-plugins-plugin-version>
     <build-helper-plugin-version>1.7</build-helper-plugin-version>
     <maven-resources-plugin-version>2.5</maven-resources-plugin-version>
-
-    <application-name>CXF Camel Examples</application-name>
-    <fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
   </properties>
 
   <repositories>
