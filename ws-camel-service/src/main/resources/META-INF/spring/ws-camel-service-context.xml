@@ -18,13 +18,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:camel="http://camel.apache.org/schema/spring"
        xmlns:osgi="http://www.springframework.org/schema/osgi"
-       xmlns:jaxws="http://cxf.apache.org/jaxws"
        xmlns:cxf="http://camel.apache.org/schema/cxf"
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
        http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
        http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd
-       http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
        http://camel.apache.org/schema/cxf http://camel.apache.org/schema/cxf/camel-cxf-2.8.3.xsd">
 
   <bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"/>
@@ -41,18 +39,6 @@
           <ref bean="loggingOutInterceptor"/>
       </cxf:outInterceptors>
   </cxf:cxfEndpoint>
-
-  <!-- this plain cxf endpoint works off the metadata from our implementation class; note the namespace -->
-  <jaxws:endpoint id="greeterImpl"
-                   address="http://localhost:9090/greeterImpl"
-                   implementor="com.fusesource.examples.greeter.impl.GreeterService">
-      <jaxws:inInterceptors>
-          <ref bean="loggingInInterceptor"/>
-      </jaxws:inInterceptors>
-      <jaxws:outInterceptors>
-          <ref bean="loggingOutInterceptor"/>
-      </jaxws:outInterceptors>
-  </jaxws:endpoint>
 
   <camelContext id="context.greeter-routes" xmlns="http://camel.apache.org/schema/spring">
 

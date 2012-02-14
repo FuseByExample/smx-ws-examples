@@ -20,7 +20,7 @@ import com.fusesource.examples.greeter.Greeter;
 import com.fusesource.examples.greeter.PingMeFault;
 import com.fusesource.examples.greeter.model.FaultDetail;
 
-public class GreeterService implements Greeter {
+public class ConcreteGreeter implements Greeter {
   private Logger log = LoggerFactory.getLogger(this.getClass());
     
   public void greetMeOneWay(String name) {

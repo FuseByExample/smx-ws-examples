@@ -29,8 +29,9 @@
 
   <modules>
     <module>greeter-api</module>
-    <module>ws-camel-client</module>
     <module>ws-cxf-service</module>
+    <module>ws-camel-service</module>
+    <module>ws-camel-client</module>
   </modules>
 
   <properties>
