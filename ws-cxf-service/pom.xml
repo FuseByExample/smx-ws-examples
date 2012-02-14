@@ -25,7 +25,7 @@
   </parent>
 
   <groupId>com.fusesource.examples</groupId>
-  <artifactId>greeter-routes</artifactId>
+  <artifactId>ws-cxf-service</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
 

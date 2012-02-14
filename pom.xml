@@ -29,7 +29,7 @@
 
   <modules>
     <module>greeter-api</module>
-    <module>greeter-routes</module>
+    <module>ws-cxf-service</module>
   </modules>
 
   <properties>
