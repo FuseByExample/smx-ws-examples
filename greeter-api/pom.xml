@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>cxf-camel</artifactId>
+    <groupId>com.fusesource.examples</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.fusesource.examples</groupId>
+  <artifactId>greeter-api</artifactId>
+  <name>${application-name} :: ${project.artifactId}</name>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+
+  <properties>
+    <osgi-export-package>wsdl,com.fusesource.examples.greeter,com.fusesource.examples.greeter.model</osgi-export-package>
+  </properties>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+  
+    <plugins>
+      <plugin>
+        <groupId>org.apache.cxf</groupId>
+        <artifactId>cxf-codegen-plugin</artifactId>
+        <version>${cxf-version}</version>
+        <executions>
+          <execution>
+            <id>generate-sources</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <sourceRoot>${project.build.directory}/generated/cxf</sourceRoot>
+              <wsdlOptions>
+                <wsdlOption>
+                  <wsdl>${basedir}/src/main/resources/wsdl/greeter.wsdl</wsdl>
+                </wsdlOption>
+              </wsdlOptions>
+            </configuration>
+            <goals>
+              <goal>wsdl2java</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <!-- to generate the MANIFEST-FILE of the bundle -->
+      <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <configuration>
+            <instructions>
+              <Export-Package>${osgi-export-package}</Export-Package>
+            </instructions>
+          </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

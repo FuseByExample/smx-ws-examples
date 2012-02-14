@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.fusesource.examples</groupId>
+    <artifactId>cxf-camel</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.fusesource.examples</groupId>
+  <artifactId>greeter-routes</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>bundle</packaging>
+
+  <name>${application-name} :: ${project.artifactId}</name>
+
+  <properties>
+    <osgi-import-package>META-INF.cxf,wsdl,*</osgi-import-package>
+    <osgi-dynamicimport-package>org.apache.cxf.*,org.springframework.beans.*</osgi-dynamicimport-package>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>greeter-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+      <version>${camel-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-spring</artifactId>
+      <version>${camel-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-soap</artifactId>
+      <version>${camel-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-cxf</artifactId>
+      <version>${camel-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-jetty</artifactId>
+      <version>${camel-version}</version>
+    </dependency>
+
+    <!-- logging -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j-version}</version> 
+    </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>
+      <version>${slf4j-version}</version>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>${log4j-version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <defaultGoal>install</defaultGoal>
+  
+    <plugins>
+      <plugin>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>maven-bundle-plugin</artifactId>
+          <configuration>
+            <instructions>
+              <Import-Package>${osgi-import-package}</Import-Package>
+              <DynamicImport-Package>${osgi-dynamicimport-package}
+              </DynamicImport-Package>
+            </instructions>
+          </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>
