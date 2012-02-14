@@ -27,7 +27,7 @@
       <from uri="timer:foo?period=5000"/>
       <!-- set the action to be triggered -->
       <setHeader headerName="SOAPAction">
-        <constant>http://examples.fusesource.com/greeter/greetMeOneWay</constant>
+        <constant>http://examples.fusesource.com/greeter/greetMe</constant>
       </setHeader>
       <transform>
         <constant>My Favourite Web Service</constant>
@@ -35,11 +35,13 @@
       <log message="The message contains ${body}"/>
       
       <loadBalance>
-        <roundRobin/>
+        <failover roundRobin="true" maximumFailoverAttempts="1"/>
         <!-- exposed by ws-cxf-service -->
         <to uri="cxf:http://localhost:9090/greeter?serviceClass=com.fusesource.examples.greeter.Greeter" />
         <!-- exposed by ws-camel-service -->
         <to uri="cxf:http://localhost:9090/greeterImpl?serviceClass=com.fusesource.examples.greeter.Greeter" />
+        <!-- exposed by ws-camel-proxy -->
+        <to uri="cxf:http://localhost:9091/greeterProxy?serviceClass=com.fusesource.examples.greeter.Greeter" />
       </loadBalance>
     </route>
 
