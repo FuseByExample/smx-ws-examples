@@ -2,7 +2,7 @@ This projects contains a set of OSGi bundles that demonstrate web services in Se
 
 The following patterns are shown:
 
-* generating Java objects from a WSDL using the `maven-cxf-plugin`s `wsdl2java` command
+* generating Java objects from a WSDL using the `cxf-codegen-plugin` `wsdl2java` command
 * a concrete CXF web service implementation
 * a Camel route that dynamically acts as a web service implementation
 * a Camel route that invokes a SOAP web service
