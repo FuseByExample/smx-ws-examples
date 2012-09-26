@@ -182,7 +182,7 @@
   </wsdl:binding>
 
   <!-- maps a service binding to a service URL -->
-  <wsdl:service name="SOAPService">
+  <wsdl:service name="GreeterService">
     <wsdl:port binding="tns:Greeter_SOAPBinding" name="SoapPort">
       <soap:address location="http://localhost:9000/SoapContext/SoapPort"/>
     </wsdl:port>
