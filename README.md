@@ -1,4 +1,4 @@
-This projects contains a set of OSGi bundles that demonstrate web services in ServiceMix using CXF and Camel. 
+This projects contains a set of OSGi bundles that demonstrate web services in JBoss Fuse using CXF and Camel.
 
 The following patterns are shown:
 
@@ -28,7 +28,7 @@ There are two additional parent projects that simplify the Maven project configu
 
 Prerequisites
 =============
-Set up Fuse ESB by downloading the latest (7.1.0) version from [FuseSource](http://fusesource.com/downloads/). The installation guide can be reached from the Documentation tab on that page.
+Set up JBoss Fuse by downloading the latest (6.0.0) version from [Red Hat](https://access.redhat.com/jbossnetwork/). The installation guide can be reached from the Documentation tab on that page.
 
 Ensure that Maven is set up on your system. 
 
@@ -38,9 +38,9 @@ Download this project and run
 
 	smx-ws-examples> mvn clean install
 
-Start up ServiceMix
+Start up Fuse
 
-	$FUSE_ESB_HOME> bin/servicemix console
+	$JBOSS_FUSE_HOME> bin/fuse console
 
           _ ____                  ______
          | |  _ \                |  ____|
@@ -59,12 +59,12 @@ Start up ServiceMix
 
 Install the `smx-ws-examples` features file. This gets pulled out from your local Maven repository, and defines which bundles you mean to install for the example project.
 
-	FuseESB:karaf@root> features:addurl mvn:com.fusesource.examples/ws-features/1.0-SNAPSHOT/xml/features
+	JBossFuse:karaf@root> features:addurl mvn:com.fusesource.examples/ws-features/1.0-SNAPSHOT/xml/features
 	
 Install all of the necessary OSGi bundles by installing the `smx-ws-examples` feature
 
-	FuseESB:karaf@root> features:install smx-ws-examples
-	FuseESB:karaf@root> list | grep Examples
+	JBossFuse:karaf@root> features:install smx-ws-examples
+	JBossFuse:karaf@root> list | grep Examples
 	[ 225] [Active     ] [            ] [Started] [   60] ServiceMix Web Service Examples :: greeter-api (1.0.0.SNAPSHOT)
 	[ 226] [Active     ] [            ] [Started] [   60] ServiceMix Web Service Examples :: ws-cxf-service (1.0.0.SNAPSHOT)
 	[ 227] [Active     ] [            ] [Started] [   60] ServiceMix Web Service Examples :: ws-camel-service (1.0.0.SNAPSHOT)
@@ -73,10 +73,10 @@ Install all of the necessary OSGi bundles by installing the `smx-ws-examples` fe
 
 Tail the logs and you should see the CXF invocations ticking over.
 
-	FuseESB:karaf@root> log:tail
+	JBossFuse:karaf@root> log:Display
 
 You can also verify that the web services are available by accessing the following from your browser:
 
 * `ws-cxf-service` - http://localhost:9090/greeterImpl?wsdl 
 * `ws-camel-service` - http://localhost:9090/greeter?wsdl 
-* `ws-camel-proxy` - http://localhost:9091/greeterProxy?wsdl 
+* `ws-camel-proxy` - http://localhost:9091/greeterProxy?wsdl

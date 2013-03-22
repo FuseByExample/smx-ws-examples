@@ -39,9 +39,10 @@
   <properties>
     <application-name>ServiceMix Web Service Examples</application-name>
     <fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
+    <fusesource-ea-repo>http://repo.fusesource.com/nexus/content/groups/ea/</fusesource-ea-repo>
 
-    <camel-version>2.10.0.fuse-71-047</camel-version>
-    <cxf-version>2.6.0.fuse-71-047</cxf-version>
+    <camel-version>2.10.0.redhat-60020</camel-version>
+    <cxf-version>2.6.0.redhat-60020</cxf-version>
     <slf4j-version>1.6.1</slf4j-version>
     <log4j-version>1.2.16</log4j-version>
     <junit-version>4.7</junit-version>
@@ -57,12 +58,34 @@
       <id>fusesource</id>
       <url>${fusesource-repo}</url>
     </repository>
+    <repository>
+        <id>fusesource.ea</id>
+        <name>FuseSource Early Access</name>
+        <url>${fusesource-ea-repo}</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+    </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <id>fusesource</id>
       <url>${fusesource-repo}</url>
+    </pluginRepository>
+    <pluginRepository>
+        <id>fusesource.ea</id>
+        <name>FuseSource Early Access</name>
+        <url>${fusesource-ea-repo}</url>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
     </pluginRepository>
   </pluginRepositories>
 
