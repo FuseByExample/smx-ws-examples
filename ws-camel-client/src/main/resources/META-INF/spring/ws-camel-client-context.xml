@@ -26,8 +26,8 @@
     <route id="periodicGreeter">
       <from uri="timer:foo?period=5000"/>
       <!-- set the action to be triggered -->
-      <setHeader headerName="SOAPAction">
-        <constant>http://examples.fusesource.com/greeter/greetMe</constant>
+      <setHeader headerName="operationName">
+        <constant>greetMe</constant>
       </setHeader>
       <transform>
         <constant>My Favourite Web Service</constant>
