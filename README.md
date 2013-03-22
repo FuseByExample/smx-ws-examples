@@ -28,7 +28,7 @@ There are two additional parent projects that simplify the Maven project configu
 
 Prerequisites
 =============
-Set up ServiceMix by downloading the latest (4.4.1-fuse-01-13 or above) version from [FuseSource](http://fusesource.com/products/enterprise-servicemix/). The installation guide can be reached from the Documentation tab on that page. 
+Set up Fuse ESB by downloading the latest (7.1.0) version from [FuseSource](http://fusesource.com/downloads/). The installation guide can be reached from the Documentation tab on that page.
 
 Ensure that Maven is set up on your system. 
 
@@ -40,27 +40,31 @@ Download this project and run
 
 Start up ServiceMix
 
-	$SERVICEMIX_HOME> bin/servicemix console 
-	
-	 ____                  _          __  __ _      
-	/ ___|  ___ _ ____   _(_) ___ ___|  \/  (_)_  __
-	\___ \ / _ \ '__\ \ / / |/ __/ _ \ |\/| | \ \/ /
-	 ___) |  __/ |   \ V /| | (_|  __/ |  | | |>  < 
-	|____/ \___|_|    \_/ |_|\___\___|_|  |_|_/_/\_\
-	
-	  Apache ServiceMix (4.4.1-fuse-01-13)
-	
-	Hit '<tab>' for a list of available commands
-	and '[cmd] --help' for help on a specific command.
+	$FUSE_ESB_HOME> bin/servicemix console
+
+          _ ____                  ______
+         | |  _ \                |  ____|
+         | | |_) | ___  ___ ___  | |__ _   _ ___  ___
+     _   | |  _ < / _ \/ __/ __| |  __| | | / __|/ _ \
+    | |__| | |_) | (_) \__ \__ \ | |  | |_| \__ \  __/
+     \____/|____/ \___/|___/___/ |_|   \__,_|___/\___|
+
+      JBoss Fuse (6.0.0.redhat-019)
+      http://www.redhat.com/products/jbossenterprisemiddleware/fuse/
+
+    Hit '<tab>' for a list of available commands
+    and '[cmd] --help' for help on a specific command.
+    Hit '<ctrl-d>' or 'osgi:shutdown' to shutdown JBoss Fuse.
+
 
 Install the `smx-ws-examples` features file. This gets pulled out from your local Maven repository, and defines which bundles you mean to install for the example project.
 
-	karaf@root> features:addurl mvn:com.fusesource.examples/ws-features/1.0-SNAPSHOT/xml/features
+	FuseESB:karaf@root> features:addurl mvn:com.fusesource.examples/ws-features/1.0-SNAPSHOT/xml/features
 	
 Install all of the necessary OSGi bundles by installing the `smx-ws-examples` feature
 
-	karaf@root> features:install smx-ws-examples
-	karaf@root> list | grep Examples
+	FuseESB:karaf@root> features:install smx-ws-examples
+	FuseESB:karaf@root> list | grep Examples
 	[ 225] [Active     ] [            ] [Started] [   60] ServiceMix Web Service Examples :: greeter-api (1.0.0.SNAPSHOT)
 	[ 226] [Active     ] [            ] [Started] [   60] ServiceMix Web Service Examples :: ws-cxf-service (1.0.0.SNAPSHOT)
 	[ 227] [Active     ] [            ] [Started] [   60] ServiceMix Web Service Examples :: ws-camel-service (1.0.0.SNAPSHOT)
@@ -69,7 +73,7 @@ Install all of the necessary OSGi bundles by installing the `smx-ws-examples` fe
 
 Tail the logs and you should see the CXF invocations ticking over.
 
-	karaf@root> log:tail
+	FuseESB:karaf@root> log:tail
 
 You can also verify that the web services are available by accessing the following from your browser:
 
