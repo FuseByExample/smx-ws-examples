@@ -38,8 +38,8 @@
 
   <properties>
     <application-name>ServiceMix Web Service Examples</application-name>
-    <fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
-    <fusesource-ea-repo>http://repo.fusesource.com/nexus/content/groups/ea/</fusesource-ea-repo>
+    <fusesource-repo>http://repository.jboss.org/nexus/content/repositories/fs-releases</fusesource-repo>
+    <fusesource-ea-repo>http://repository.jboss.org/nexus/content/repositories/ea</fusesource-ea-repo>
 
     <camel-version>2.12.0.redhat-610379</camel-version>
     <cxf-version>2.7.0.redhat-610379</cxf-version>
