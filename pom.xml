@@ -41,8 +41,8 @@
     <fusesource-repo>http://repo.fusesource.com/maven2</fusesource-repo>
     <fusesource-ea-repo>http://repo.fusesource.com/nexus/content/groups/ea/</fusesource-ea-repo>
 
-    <camel-version>2.12.0.redhat-610312</camel-version>
-    <cxf-version>2.7.0.redhat-610312</cxf-version>
+    <camel-version>2.12.0.redhat-610379</camel-version>
+    <cxf-version>2.7.0.redhat-610379</cxf-version>
     <slf4j-version>1.6.1</slf4j-version>
     <log4j-version>1.2.16</log4j-version>
     <junit-version>4.7</junit-version>
@@ -53,41 +53,54 @@
     <maven-resources-plugin-version>2.6</maven-resources-plugin-version>
   </properties>
 
-  <repositories>
-    <repository>
-      <id>fusesource</id>
-      <url>${fusesource-repo}</url>
-    </repository>
-    <repository>
-        <id>fusesource.ea</id>
-        <name>FuseSource Early Access</name>
-        <url>${fusesource-ea-repo}</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-    </repository>
-  </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>fusesource</id>
-      <url>${fusesource-repo}</url>
-    </pluginRepository>
-    <pluginRepository>
-        <id>fusesource.ea</id>
-        <name>FuseSource Early Access</name>
-        <url>${fusesource-ea-repo}</url>
-        <snapshots>
-            <enabled>false</enabled>
-        </snapshots>
-        <releases>
-            <enabled>true</enabled>
-        </releases>
-    </pluginRepository>
-  </pluginRepositories>
+    <repositories>
+        <repository>
+            <id>fusesource.releases</id>
+            <name>FuseSource Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>fusesource.ea</id>
+            <name>FuseSource Early Access Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/ea/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>fusesource.releases</id>
+            <name>FuseSource Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>fusesource.ea</id>
+            <name>FuseSource Early Access Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/groups/ea/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
 
   <dependencies>
     <dependency>
