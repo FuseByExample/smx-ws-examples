@@ -36,22 +36,25 @@
     <module>ws-features</module>
   </modules>
 
-  <properties>
-    <application-name>ServiceMix Web Service Examples</application-name>
-    <fusesource-repo>http://repository.jboss.org/nexus/content/repositories/fs-releases</fusesource-repo>
-    <fusesource-ea-repo>http://repository.jboss.org/nexus/content/repositories/ea</fusesource-ea-repo>
+    <properties>
+        <application-name>ServiceMix Web Service Examples</application-name>
+        <fusesource-repo>http://repository.jboss.org/nexus/content/repositories/fs-releases</fusesource-repo>
+        <fusesource-ea-repo>http://repository.jboss.org/nexus/content/repositories/ea</fusesource-ea-repo>
 
-    <camel-version>2.12.0.redhat-610379</camel-version>
-    <cxf-version>2.7.0.redhat-610379</cxf-version>
-    <slf4j-version>1.6.1</slf4j-version>
-    <log4j-version>1.2.16</log4j-version>
-    <junit-version>4.7</junit-version>
+        <camel.version>2.14.0.redhat-620058</camel.version>
+        <cxf.version>3.0.2.redhat-620056</cxf.version>
+        <slf4j.version>1.7.10</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <junit.version>4.11</junit.version>
 
-    <maven-bundle-plugin-version>2.3.4</maven-bundle-plugin-version>
-    <build-plugins-plugin-version>2.5</build-plugins-plugin-version>
-    <build-helper-plugin-version>1.7</build-helper-plugin-version>
-    <maven-resources-plugin-version>2.6</maven-resources-plugin-version>
-  </properties>
+        <felix.maven.bundle.plugin>2.5.3</felix.maven.bundle.plugin>
+        <!--build-plugins-plugin-version>2.5</build-plugins-plugin-version-->
+        <build.helper.maven.plugin>1.9.1</build.helper.maven.plugin>
+        <maven.resources.plugin.version>2.7</maven.resources.plugin.version>
+        <maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
 
     <repositories>
         <repository>
@@ -117,50 +120,50 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>${junit-version}</version>
+        <version>${junit.version}</version>
         <scope>test</scope>
       </dependency>
 
       <dependency>
           <groupId>org.apache.camel</groupId>
           <artifactId>camel-cxf</artifactId>
-          <version>${camel-version}</version>
+          <version>${camel.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.camel</groupId>
           <artifactId>camel-http</artifactId>
-          <version>${camel-version}</version>
+          <version>${camel.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.camel</groupId>
           <artifactId>camel-soap</artifactId>
-          <version>${camel-version}</version>
+          <version>${camel.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.camel</groupId>
           <artifactId>camel-jaxb</artifactId>
-          <version>${camel-version}</version>
+          <version>${camel.version}</version>
       </dependency>
         
       <dependency>
           <groupId>org.apache.cxf</groupId>
           <artifactId>cxf-rt-frontend-jaxws</artifactId>
-          <version>${cxf-version}</version>
+          <version>${cxf.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.cxf</groupId>
           <artifactId>cxf-rt-transports-http</artifactId>
-          <version>${cxf-version}</version>
+          <version>${cxf.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.cxf</groupId>
           <artifactId>cxf-rt-transports-http-jetty</artifactId>
-          <version>${cxf-version}</version>
+          <version>${cxf.version}</version>
       </dependency>
       <dependency>
           <groupId>org.apache.cxf</groupId>
           <artifactId>cxf-rt-bindings-soap</artifactId>
-          <version>${cxf-version}</version>
+          <version>${cxf.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -171,16 +174,16 @@
         <plugin>
           <groupId>org.apache.camel</groupId>
           <artifactId>camel-maven-plugin</artifactId>
-          <version>${camel-version}</version>
+          <version>${camel.version}</version>
         </plugin>
 
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>2.3.2</version>
+          <version>${maven.compiler.plugin.version}</version>
           <configuration>
-            <source>1.6</source>
-            <target>1.6</target>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
           </configuration>
         </plugin>
 
@@ -188,7 +191,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>${maven-bundle-plugin-version}</version>
+          <version>${felix.maven.bundle.plugin}</version>
           <extensions>true</extensions>
           <configuration>
             <instructions>

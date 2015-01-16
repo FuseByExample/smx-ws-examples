@@ -28,7 +28,7 @@ There are two additional parent projects that simplify the Maven project configu
 
 Prerequisites
 =============
-Set up JBoss Fuse by downloading the latest (6.1.0) version from [Red Hat](https://access.redhat.com/jbossnetwork/). The installation guide can be reached from the Documentation tab on that page.
+Set up JBoss Fuse by downloading the latest (6.2.0) version from [Red Hat](https://access.redhat.com/jbossnetwork/). The installation guide can be reached from the Documentation tab on that page.
 
 Ensure that Maven is set up on your system. 
 
@@ -49,7 +49,7 @@ Start up Fuse
     | |__| | |_) | (_) \__ \__ \ | |  | |_| \__ \  __/
      \____/|____/ \___/|___/___/ |_|   \__,_|___/\___|
 
-      JBoss Fuse (6.1.0.redhat-312)
+      JBoss Fuse (6.2.0.redhat-059)
       http://www.redhat.com/products/jbossenterprisemiddleware/fuse/
 
     Hit '<tab>' for a list of available commands
