@@ -28,7 +28,7 @@ There are two additional parent projects that simplify the Maven project configu
 
 Prerequisites
 =============
-Set up JBoss Fuse by downloading the latest (6.2.0) version from [Red Hat](https://access.redhat.com/jbossnetwork/). The installation guide can be reached from the Documentation tab on that page.
+Set up JBoss Fuse by downloading the latest (6.3.0) version from [Red Hat](https://access.redhat.com/jbossnetwork/). The installation guide can be reached from the Documentation tab on that page.
 
 Ensure that Maven is set up on your system. 
 
@@ -73,7 +73,7 @@ Install all of the necessary OSGi bundles by installing the `smx-ws-examples` fe
 
 Tail the logs and you should see the CXF invocations ticking over.
 
-	JBossFuse:karaf@root> log:Display
+	JBossFuse:karaf@root> log:display
 
 You can also verify that the web services are available by accessing the following from your browser:
 
