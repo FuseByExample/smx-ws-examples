@@ -16,7 +16,8 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 
---><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
@@ -38,16 +39,12 @@
 
     <properties>
         <application-name>ServiceMix Web Service Examples</application-name>
-        <fusesource-repo>http://repository.jboss.org/nexus/content/repositories/fs-releases</fusesource-repo>
-        <fusesource-ea-repo>http://repository.jboss.org/nexus/content/repositories/ea</fusesource-ea-repo>
 
-        <camel.version>2.15.1.redhat-621084</camel.version>
-        <cxf.version>3.0.4.redhat-621084</cxf.version>
-        <slf4j.version>1.7.10</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
-        <junit.version>4.11</junit.version>
+        <camel.version>2.17.0.redhat-630191</camel.version>
+        <cxf.version>3.1.5.redhat-630191</cxf.version>
+        <jboss.fuse.bom.version>6.3.0.redhat-191</jboss.fuse.bom.version>
 
-        <felix.maven.bundle.plugin.version>2.5.3</felix.maven.bundle.plugin.version>
+        <maven.bundle.plugin.version>2.5.3</maven.bundle.plugin.version>
         <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
         <maven.resources.plugin.version>2.7</maven.resources.plugin.version>
         <maven.compiler.plugin.version>3.2</maven.compiler.plugin.version>
@@ -57,9 +54,8 @@
 
     <repositories>
         <repository>
-            <id>fusesource.releases</id>
-            <name>FuseSource Release Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
+            <id>redhat-ga-repository</id>
+            <url>https://maven.repository.redhat.com/ga</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -68,22 +64,20 @@
             </snapshots>
         </repository>
         <repository>
-            <id>fusesource.ea</id>
-            <name>FuseSource Early Access Release Repository</name>
-            <url>https://repository.jboss.org/nexus/content/groups/ea/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <id>redhat-ea-repository</id>
+            <url>https://maven.repository.redhat.com/earlyaccess/all</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <id>fusesource.releases</id>
-            <name>FuseSource Release Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/fs-releases/</url>
+            <id>redhat-ga-repository</id>
+            <url>https://maven.repository.redhat.com/ga</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -92,80 +86,16 @@
             </snapshots>
         </pluginRepository>
         <pluginRepository>
-            <id>fusesource.ea</id>
-            <name>FuseSource Early Access Release Repository</name>
-            <url>https://repository.jboss.org/nexus/content/groups/ea/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+            <id>redhat-ea-repository</id>
+            <url>https://maven.repository.redhat.com/earlyaccess/all</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-
-  <dependencyManagement>
-    <dependencies>
-      <!-- test dependencies -->
-      <dependency>
-        <groupId>junit</groupId>
-        <artifactId>junit</artifactId>
-        <version>${junit.version}</version>
-        <scope>test</scope>
-      </dependency>
-
-      <dependency>
-          <groupId>org.apache.camel</groupId>
-          <artifactId>camel-cxf</artifactId>
-          <version>${camel.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.camel</groupId>
-          <artifactId>camel-http</artifactId>
-          <version>${camel.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.camel</groupId>
-          <artifactId>camel-soap</artifactId>
-          <version>${camel.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.camel</groupId>
-          <artifactId>camel-jaxb</artifactId>
-          <version>${camel.version}</version>
-      </dependency>
-        
-      <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-frontend-jaxws</artifactId>
-          <version>${cxf.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-transports-http</artifactId>
-          <version>${cxf.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-transports-http-jetty</artifactId>
-          <version>${cxf.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.cxf</groupId>
-          <artifactId>cxf-rt-bindings-soap</artifactId>
-          <version>${cxf.version}</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <build>
     <pluginManagement>
@@ -190,7 +120,7 @@
         <plugin>
           <groupId>org.apache.felix</groupId>
           <artifactId>maven-bundle-plugin</artifactId>
-          <version>${felix.maven.bundle.plugin.version}</version>
+          <version>${maven.bundle.plugin.version}</version>
           <extensions>true</extensions>
           <configuration>
             <instructions>
