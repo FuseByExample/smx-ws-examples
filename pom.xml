@@ -40,9 +40,9 @@
     <properties>
         <application-name>ServiceMix Web Service Examples</application-name>
 
-        <camel.version>2.17.0.redhat-630191</camel.version>
-        <cxf.version>3.1.5.redhat-630191</cxf.version>
-        <jboss.fuse.bom.version>6.3.0.redhat-191</jboss.fuse.bom.version>
+        <camel.version>2.17.0.redhat-630187</camel.version>
+        <cxf.version>3.1.5.redhat-630187</cxf.version>
+        <jboss.fuse.bom.version>6.3.0.redhat-187</jboss.fuse.bom.version>
 
         <maven.bundle.plugin.version>2.5.3</maven.bundle.plugin.version>
         <build.helper.maven.plugin.version>1.9.1</build.helper.maven.plugin.version>
@@ -63,31 +63,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>redhat-ea-repository</id>
-            <url>https://maven.repository.redhat.com/earlyaccess/all</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>redhat-ga-repository</id>
             <url>https://maven.repository.redhat.com/ga</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>redhat-ea-repository</id>
-            <url>https://maven.repository.redhat.com/earlyaccess/all</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
